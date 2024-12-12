@@ -1,11 +1,5 @@
 # greenland
 
-
-```markdown
-# GREENLAND Dataset Structure
-
-## Cross-lingual Experiments
-```
 ```markdown
 # GREENLAND Dataset Structure
 
