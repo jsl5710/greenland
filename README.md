@@ -6,13 +6,13 @@
 
 ## Cross-lingual Experiments
 ```
+```markdown
+# GREENLAND Dataset Structure
+
+## Cross-lingual Experiments
+```
 cross_lingual/
 ├── genetics/
-│   ├── all_to_all/
-│   │   └── all_head_to_all_tail/
-│   │       ├── test.csv
-│   │       ├── train.csv
-│   │       └── valid.csv
 │   ├── head_to_tail/
 │   │   ├── major_to_major/
 │   │   │   ├── test.csv
@@ -30,38 +30,28 @@ cross_lingual/
 │   │       ├── test.csv
 │   │       ├── train.csv
 │   │       └── valid.csv
-│   └── tail_to_tail/
-│       ├── major_tail_to_minor_tail/
-│       │   ├── test.csv
-│       │   ├── train.csv
-│       │   └── valid.csv
-│       └── minor_tail_to_major_tail/
+│   ├── tail_to_tail/
+│   │   ├── major_tail_to_minor_tail/
+│   │   │   ├── test.csv
+│   │   │   ├── train.csv
+│   │   │   └── valid.csv
+│   │   └── minor_tail_to_major_tail/
+│   │       ├── test.csv
+│   │       ├── train.csv
+│   │       └── valid.csv
+│   └── all_to_all/
+│       └── all_head_to_all_tail/
 │           ├── test.csv
 │           ├── train.csv
 │           └── valid.csv
-├── script/
-│   [Same structure as genetics]
-└── word_order/
-    [Same structure as genetics]
+├── script/          # Same structure as genetics
+└── word_order/      # Same structure as genetics
 ```
 
 ## Multilingual Experiments
 ```
 multilingual/
 ├── genetics/
-│   ├── all_and_all/
-│   │   ├── all_head_to_all_head/
-│   │   │   ├── test.csv
-│   │   │   ├── train.csv
-│   │   │   └── valid.csv
-│   │   ├── all_tail_to_all_tail/
-│   │   │   ├── test.csv
-│   │   │   ├── train.csv
-│   │   │   └── valid.csv
-│   │   └── head_and_tail_combined/
-│   │       ├── test.csv
-│   │       ├── train.csv
-│   │       └── valid.csv
 │   ├── head_and_head/
 │   │   ├── major_head_to_major_head/
 │   │   │   ├── test.csv
@@ -71,19 +61,42 @@ multilingual/
 │   │       ├── test.csv
 │   │       ├── train.csv
 │   │       └── valid.csv
-│   └── tail_and_tail/
-│       ├── major_tail_to_major_tail/
+│   ├── tail_and_tail/
+│   │   ├── major_tail_to_major_tail/
+│   │   │   ├── test.csv
+│   │   │   ├── train.csv
+│   │   │   └── valid.csv
+│   │   └── minor_tail_to_minor_tail/
+│   │       ├── test.csv
+│   │       ├── train.csv
+│   │       └── valid.csv
+│   └── all_and_all/
+│       ├── all_head_to_all_head/
 │       │   ├── test.csv
 │       │   ├── train.csv
 │       │   └── valid.csv
-│       └── minor_tail_to_minor_tail/
+│       ├── all_tail_to_all_tail/
+│       │   ├── test.csv
+│       │   ├── train.csv
+│       │   └── valid.csv
+│       └── head_and_tail_combined/
 │           ├── test.csv
 │           ├── train.csv
 │           └── valid.csv
-├── script/
-│   [Same structure as genetics]
-└── word_order/
-    [Same structure as genetics]
+├── script/          # Same structure as genetics
+└── word_order/      # Same structure as genetics
+```
+
+Each category (genetics, script, word_order) follows identical internal structure but with different language splits based on their respective criteria:
+
+1. **Genetic Splits**: Based on language families
+2. **Script Splits**: Based on writing systems
+3. **Word Order Splits**: Based on syntactic structure
+
+Every terminal directory contains:
+- `train.csv`: Training dataset
+- `valid.csv`: Validation dataset
+- `test.csv`: Test dataset
 ```
 
 ## File Structure Notes
