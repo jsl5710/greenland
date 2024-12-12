@@ -1,84 +1,122 @@
 # greenland
 
 ```markdown
-# GREENLAND Dataset Structure
-
-## Cross-lingual Experiments
+# GREENLAND Dataset Structure\n
+\n
+## Dataset Organization\n
+\n
+| Experiment Type | Category | Split Type | Subset | Files |
+|----------------|----------|------------|---------|-------|
+| Cross-lingual | Genetics/Script/Word Order | head_to_tail | major_to_major | train.csv, valid.csv, test.csv |
+| | | | major_to_minor | train.csv, valid.csv, test.csv |
+| | | | minor_to_major | train.csv, valid.csv, test.csv |
+| | | | minor_to_minor | train.csv, valid.csv, test.csv |
+| | | tail_to_tail | major_tail_to_minor_tail | train.csv, valid.csv, test.csv |
+| | | | minor_tail_to_major_tail | train.csv, valid.csv, test.csv |
+| | | all_to_all | all_head_to_all_tail | train.csv, valid.csv, test.csv |
+| Multilingual | Genetics/Script/Word Order | head_and_head | major_head_to_major_head | train.csv, valid.csv, test.csv |
+| | | | minor_head_to_minor_head | train.csv, valid.csv, test.csv |
+| | | tail_and_tail | major_tail_to_major_tail | train.csv, valid.csv, test.csv |
+| | | | minor_tail_to_minor_tail | train.csv, valid.csv, test.csv |
+| | | all_and_all | all_head_to_all_head | train.csv, valid.csv, test.csv |
+| | | | all_tail_to_all_tail | train.csv, valid.csv, test.csv |
+| | | | head_and_tail_combined | train.csv, valid.csv, test.csv |
+\n
+## Directory Structure\n
+\n
+### Cross-lingual Experiments\n
 ```
-cross_lingual/
-├── genetics/
-│   ├── head_to_tail/
-│   │   ├── major_to_major/
-│   │   │   ├── test.csv
-│   │   │   ├── train.csv
-│   │   │   └── valid.csv
-│   │   ├── major_to_minor/
-│   │   │   ├── test.csv
-│   │   │   ├── train.csv
-│   │   │   └── valid.csv
-│   │   ├── minor_to_major/
-│   │   │   ├── test.csv
-│   │   │   ├── train.csv
-│   │   │   └── valid.csv
-│   │   └── minor_to_minor/
-│   │       ├── test.csv
-│   │       ├── train.csv
-│   │       └── valid.csv
-│   ├── tail_to_tail/
-│   │   ├── major_tail_to_minor_tail/
-│   │   │   ├── test.csv
-│   │   │   ├── train.csv
-│   │   │   └── valid.csv
-│   │   └── minor_tail_to_major_tail/
-│   │       ├── test.csv
-│   │       ├── train.csv
-│   │       └── valid.csv
-│   └── all_to_all/
-│       └── all_head_to_all_tail/
-│           ├── test.csv
-│           ├── train.csv
-│           └── valid.csv
-├── script/          # Same structure as genetics
-└── word_order/      # Same structure as genetics
+cross_lingual/\n
+├── genetics/\n
+│   ├── head_to_tail/\n
+│   │   ├── major_to_major/\n
+│   │   │   ├── test.csv\n
+│   │   │   ├── train.csv\n
+│   │   │   └── valid.csv\n
+│   │   ├── major_to_minor/\n
+│   │   │   ├── test.csv\n
+│   │   │   ├── train.csv\n
+│   │   │   └── valid.csv\n
+│   │   ├── minor_to_major/\n
+│   │   │   ├── test.csv\n
+│   │   │   ├── train.csv\n
+│   │   │   └── valid.csv\n
+│   │   └── minor_to_minor/\n
+│   │       ├── test.csv\n
+│   │       ├── train.csv\n
+│   │       └── valid.csv\n
+│   ├── tail_to_tail/\n
+│   │   ├── major_tail_to_minor_tail/\n
+│   │   │   ├── test.csv\n
+│   │   │   ├── train.csv\n
+│   │   │   └── valid.csv\n
+│   │   └── minor_tail_to_major_tail/\n
+│   │       ├── test.csv\n
+│   │       ├── train.csv\n
+│   │       └── valid.csv\n
+│   └── all_to_all/\n
+│       └── all_head_to_all_tail/\n
+│           ├── test.csv\n
+│           ├── train.csv\n
+│           └── valid.csv\n
+├── script/          # Same structure as genetics\n
+└── word_order/      # Same structure as genetics\n
+```\n
+\n
+### Multilingual Experiments\n
 ```
-
-## Multilingual Experiments
-```
-multilingual/
-├── genetics/
-│   ├── head_and_head/
-│   │   ├── major_head_to_major_head/
-│   │   │   ├── test.csv
-│   │   │   ├── train.csv
-│   │   │   └── valid.csv
-│   │   └── minor_head_to_minor_head/
-│   │       ├── test.csv
-│   │       ├── train.csv
-│   │       └── valid.csv
-│   ├── tail_and_tail/
-│   │   ├── major_tail_to_major_tail/
-│   │   │   ├── test.csv
-│   │   │   ├── train.csv
-│   │   │   └── valid.csv
-│   │   └── minor_tail_to_minor_tail/
-│   │       ├── test.csv
-│   │       ├── train.csv
-│   │       └── valid.csv
-│   └── all_and_all/
-│       ├── all_head_to_all_head/
-│       │   ├── test.csv
-│       │   ├── train.csv
-│       │   └── valid.csv
-│       ├── all_tail_to_all_tail/
-│       │   ├── test.csv
-│       │   ├── train.csv
-│       │   └── valid.csv
-│       └── head_and_tail_combined/
-│           ├── test.csv
-│           ├── train.csv
-│           └── valid.csv
-├── script/          # Same structure as genetics
-└── word_order/      # Same structure as genetics
+multilingual/\n
+├── genetics/\n
+│   ├── head_and_head/\n
+│   │   ├── major_head_to_major_head/\n
+│   │   │   ├── test.csv\n
+│   │   │   ├── train.csv\n
+│   │   │   └── valid.csv\n
+│   │   └── minor_head_to_minor_head/\n
+│   │       ├── test.csv\n
+│   │       ├── train.csv\n
+│   │       └── valid.csv\n
+│   ├── tail_and_tail/\n
+│   │   ├── major_tail_to_major_tail/\n
+│   │   │   ├── test.csv\n
+│   │   │   ├── train.csv\n
+│   │   │   └── valid.csv\n
+│   │   └── minor_tail_to_minor_tail/\n
+│   │       ├── test.csv\n
+│   │       ├── train.csv\n
+│   │       └── valid.csv\n
+│   └── all_and_all/\n
+│       ├── all_head_to_all_head/\n
+│       │   ├── test.csv\n
+│       │   ├── train.csv\n
+│       │   └── valid.csv\n
+│       ├── all_tail_to_all_tail/\n
+│       │   ├── test.csv\n
+│       │   ├── train.csv\n
+│       │   └── valid.csv\n
+│       └── head_and_tail_combined/\n
+│           ├── test.csv\n
+│           ├── train.csv\n
+│           └── valid.csv\n
+├── script/          # Same structure as genetics\n
+└── word_order/      # Same structure as genetics\n
+```\n
+\n
+## Data Split Details\n
+\n
+| Split Type | Description |
+|------------|-------------|
+| train.csv | Training dataset (80% for multilingual, 90% for cross-lingual) |
+| valid.csv | Validation dataset (10%) |
+| test.csv | Test dataset (10% for multilingual, 100% of target languages for cross-lingual) |
+\n
+## Category Descriptions\n
+\n
+| Category | Description |
+|----------|-------------|
+| Genetics | Language family-based splits |
+| Script | Writing system-based splits |
+| Word Order | Syntactic structure-based splits |
 ```
 
 Each category (genetics, script, word_order) follows identical internal structure but with different language splits based on their respective criteria:
